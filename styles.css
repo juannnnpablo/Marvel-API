@@ -187,12 +187,13 @@ body {
         flex-basis: 100%;
         max-width: 100%;
         max-height: fit-content;
-    }
+        
+        .nombre {
+            font-size: 3vw;
+        }
 
-    .contenido {
-        .character-image {
-            width: calc(80vw);
-            height: calc(80vw);
+        .descripcion {
+            font-size: 2vw;
         }
     }
 
@@ -201,15 +202,25 @@ body {
         
         .informacion{
             .lista{
-                font-size: 0.8rem;
-            }
-            .texto{
-                font-size: 1rem;
+                .numeral{
+                    font-size: 2vw;
+                }
+                .texto{
+                    font-size: 2.3vw;
+                }
             }
         }
     }
     .objeto-interior {
         width: 100%;
         height: auto;
+    }
+}
+@media (max-width: 1000px){
+    .contenido {
+        .character-image {
+            width: 80vw;
+            height: 80vw;
+        }
     }
 }
