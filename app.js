@@ -102,9 +102,7 @@ function displayCharacterInfo(character) {
     ).join('<br>');
     contenidoDiv.innerHTML += `
         <section id="fondo" class="fondo" style="
-            background-image: 
-                linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 1) 100%),
-                url('${imageUrl}');
+            background-image: url('${imageUrl}');
             background-size: cover;
             background-position: center;
             "
@@ -127,19 +125,19 @@ function displayCharacterInfo(character) {
                         Comics
                     </div>
                     <div class="informacion">
-                        ${comics || '<li>No hay comics disponibles.</li>'}
+                        ${comics || '<div>No hay comics disponibles.</div>'}
                     </div>
                     <div class="titulo">
                         Series
                     </div>
                     <div class="informacion">
-                        ${series || '<li>No hay series disponibles.</li>'}
+                        ${series || '<div>No hay series disponibles.</div>'}
                     </div>
                     <div class="titulo">
                         Stories
                     </div>
                     <div class="informacion">
-                        ${stories || '<li>No hay historias disponibles.</li>'}
+                        ${stories || '<div>No hay historias disponibles.</div>'}
                     </div>
                     <div class="titulo">
                         Events
@@ -152,6 +150,7 @@ function displayCharacterInfo(character) {
         </section>
     `;
 }
-for (let i = 0; i < 26; i++) {
+/*for (let i = 0; i < 26; i++) {
     find(String.fromCharCode(97 + i));
-}
+}*/
+find("spider-man");
