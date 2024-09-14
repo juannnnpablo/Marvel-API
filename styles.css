@@ -118,7 +118,6 @@ body {
 
         .lista{
             display: flex;
-            flex-wrap: wrap;
             height: 4rem;
             transition: 250ms ease;
             border: 0px var(--border-color) solid;
@@ -187,36 +186,66 @@ body {
         flex-basis: 100%;
         max-width: 100%;
         max-height: fit-content;
-        
+
         .nombre {
-            font-size: 3vw;
+            font-size: 3rem;
         }
 
         .descripcion {
-            font-size: 2vw;
+            font-size: 1.5rem;
+        }
+    }
+
+    .objeto-b{
+        height: fit-content;
+        
+        .informacion {
+            font-size: 8vw;
+
+            .lista{
+                max-height: fit-content;
+                margin-bottom: 2rem;
+
+                .numeral{
+                    font-size: 1rem;
+                }
+                .texto{
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1000px){
+    .objeto-a {
+
+        .nombre {
+            font-size: 8vw;
+        }
+
+        .descripcion {
+            font-size: 5vw;
         }
     }
 
     .objeto-b{
         max-height: fit-content;
         
-        .informacion{
+        .informacion {
+            font-size: 1.5rem;
+
             .lista{
+                height: fit-content;
+
                 .numeral{
-                    font-size: 2vw;
+                    font-size: 4vw;
                 }
                 .texto{
-                    font-size: 2.3vw;
+                    font-size: 4.3vw;
                 }
             }
         }
     }
-    .objeto-interior {
-        width: 100%;
-        height: auto;
-    }
-}
-@media (max-width: 1000px){
     .contenido {
         .character-image {
             width: 80vw;
