@@ -191,13 +191,22 @@ body {
 
     .contenido {
         .character-image {
-            width: 30rem;
-            height: 30rem;
+            width: calc(80vw);
+            height: calc(80vw);
         }
     }
 
     .objeto-b{
         max-height: fit-content;
+        
+        .informacion{
+            .lista{
+                font-size: 0.8rem;
+            }
+            .texto{
+                font-size: 1rem;
+            }
+        }
     }
     .objeto-interior {
         width: 100%;
