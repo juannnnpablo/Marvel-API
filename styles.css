@@ -200,8 +200,9 @@ body {
     }
 
     .objeto-b{
+        width: 100%;
         background-color: var(--background-color-2);
-        height: fit-content;
+        max-height: fit-content;
         
         .informacion {
             font-size: 8vw;
@@ -216,6 +217,9 @@ body {
                 .texto{
                     font-size: 1.3rem;
                 }
+            }
+            .e{
+                font-size: 1.3rem;
             }
         }
     }
@@ -236,6 +240,7 @@ body {
     }
 
     .objeto-b{
+        width: 100%;
         background-color: var(--background-color-2);
         max-height: fit-content;
         
@@ -252,6 +257,9 @@ body {
                     font-size: 4.3vw;
                 }
             }
+        .e{
+            font-size: 4.3vw;
+        }
         }
     }
     .contenido {
