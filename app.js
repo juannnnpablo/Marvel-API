@@ -153,7 +153,6 @@ function displayCharacterInfo(character) {
         </section>
     `;
 }
-/*for (let i = 0; i < 26; i++) {
+for (let i = 0; i < 26; i++) {
     find(String.fromCharCode(97 + i));
-}*/
-find("captain");
+}
