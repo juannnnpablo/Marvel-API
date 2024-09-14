@@ -3,5 +3,4 @@
 ![preview](image-2.png)
 ![preview](image-3.png)
 ![preview](image-4.png)
-![preview](image-5.png)
 ![preview](image-6.png)
