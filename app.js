@@ -146,13 +146,14 @@ function displayCharacterInfo(character) {
                         Events
                     </div>
                     <div class="informacion">
-                        ${events || '<div>No hay eventos disponibles.</div>'}
+                        ${events || '<div class="e">No hay eventos disponibles.</div>'}
                     </div>
                 </section>
             </section>
         </section>
     `;
 }
-for (let i = 0; i < 26; i++) {
+/*for (let i = 0; i < 26; i++) {
     find(String.fromCharCode(97 + i));
-}
+}*/
+find('spider-man');
