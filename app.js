@@ -111,7 +111,10 @@ function displayCharacterInfo(character) {
                 <section class="objeto objeto-a">
                     <div 
                         class="character-image" 
-                        style="background-image: url('${imageUrl}');">
+                        style="
+                        background-image: 
+                            
+                            url('${imageUrl}');">
                     </div>
                     <div class="nombre">
                             ${name}
@@ -153,4 +156,4 @@ function displayCharacterInfo(character) {
 /*for (let i = 0; i < 26; i++) {
     find(String.fromCharCode(97 + i));
 }*/
-find("spider-man");
+find("captain");
