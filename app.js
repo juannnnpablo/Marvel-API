@@ -7,11 +7,13 @@ const generateHash = () => {
     const hash = CryptoJS.MD5(ts + privateKey + publicKey).toString();
     return hash;
 };
-// Función para buscar la información del personaje usando async/await
-// Escucha los cambios en el campo de entrada (input)
-/*document.getElementById('busquedad').addEventListener('input', async (event) => {
-    const characterName = event.target.value.trim(); // Obtiene el valor del input y elimina espacios en blanco
 
+
+
+// Función para buscar la información del personaje usando async/await
+/*document.getElementById('search-btn').addEventListener('click', async () => {
+    //const characterName = document.getElementById('character-name').value;
+    
     if (characterName) {
         const hash = generateHash();
         const url = `${baseUrl}?nameStartsWith=${characterName}&ts=${ts}&apikey=${publicKey}&hash=${hash}`;
@@ -24,25 +26,21 @@ const generateHash = () => {
 
             // Verificamos si hay resultados
             if (data && data.data && data.data.results && data.data.results.length > 0) {
-                // Limpiamos el contenido anterior
-                document.getElementById('busquedad').innerHTML = '';
-                document.getElementById('contenido').innerHTML = `<nav class="nav">
-                    <input id="busquedad" type="text"></nav>`;
-                // Mostramos los resultados
-                displayCharacterInfo(data.data.results[0]);
+                for (let i = 0; i < data.data.results.length; i++) {
+                    displayCharacterInfo(data.data.results[i]);
+                }
             } else {
-                document.getElementById('busquedad').innerHTML = `<p>No se encontró el personaje "${characterName}".</p>`;
+                document.getElementById('character-info').innerHTML = `<p>No se encontró el personaje "${characterName}".</p>`;
             }
 
         } catch (error) {
             console.error('Error en la solicitud:', error);
-            document.getElementById('busquedad').innerHTML = `<p>Error al obtener la información del personaje.</p>`;
+            document.getElementById('character-info').innerHTML = `<p>Error al obtener la información del personaje.</p>`;
         }
-    } else {
-        // Limpiamos el contenido si no hay input
-        document.getElementById('busquedad').innerHTML = `<p>Escribe el nombre de un personaje para buscar.</p>`;
     }
 });*/
+
+
 
 const find  = async characterName => {
     if (characterName) {
@@ -53,10 +51,10 @@ const find  = async characterName => {
             const jsonInfo = await response.json();
             console.log(jsonInfo.data);
             if (jsonInfo && jsonInfo.data && jsonInfo.data.results && jsonInfo.data.results.length > 0) {
-                /*for (let i = 0; i < 1; i++) {
+                for (let i = 0; i < jsonInfo.data.results.length; i++) {
                     displayCharacterInfo(jsonInfo.data.results[i]);
-                }*/
-                displayCharacterInfo(jsonInfo.data.results[8]);
+                }
+                //displayCharacterInfo(jsonInfo.data.results[0]);
             } else {
                 document.getElementsByClassName('contenido').innerHTML = `<p>No se encontró el personaje "${characterName}".</p>`;
             }
@@ -66,9 +64,8 @@ const find  = async characterName => {
         };
     };
 };
-
 function displayCharacterInfo(character) {
-    const contenidoDiv = document.getElementById("contenido");
+    const contenidoDiv = document.getElementById("cuerpo");
     const imageUrl = `${character.thumbnail.path}.${character.thumbnail.extension}`;
     const name = character.name;
     const description = character.description || 'No hay descripción disponible para este personaje.';
@@ -103,72 +100,58 @@ function displayCharacterInfo(character) {
     const urls = character.urls.map(url => 
         `<a href="${url.url}" target="_blank">${url.type}</a>`
     ).join('<br>');
-    let body = document.body.style;
-    body.backgroundImage = `
-        linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 1) 100%),
-        url('${imageUrl}')`;
-    body.backgroundSize = 'cover';
-    body.backgroundPosition = 'center';
     contenidoDiv.innerHTML += `
-        <section class="objeto objeto-a">
-            <div 
-                class="character-image" 
-                style="background-image: url('${imageUrl}');">
-            </div>
-            <div class="nombre">
-                    ${name}
-            </div>
-            <div class="descripcion">
-                ${description}
-            </div>
-        </section>
-        <section class="objeto objeto-b">
-            <div class="titulo">
-                Comics
-            </div>
-            <div class="informacion">
-                ${comics || '<li>No hay comics disponibles.</li>'}
-            </div>
-            <div class="titulo">
-                Series
-            </div>
-            <div class="informacion">
-                ${series || '<li>No hay series disponibles.</li>'}
-            </div>
-            <div class="titulo">
-                Stories
-            </div>
-            <div class="informacion">
-                ${stories || '<li>No hay historias disponibles.</li>'}
-            </div>
-            <div class="titulo">
-                Events
-            </div>
-            <div class="informacion">
-                ${events || '<li>No hay eventos disponibles.</li>'}
-            </div>
-            <div class="titulo">
-                Más Información
-            </div>
-            <div class="informacion">
-                ${urls || 'No hay enlaces adicionales.'}
-            </div>
+        <section id="fondo" class="fondo" style="
+            background-image: 
+                linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 1) 100%),
+                url('${imageUrl}');
+            background-size: cover;
+            background-position: center;
+            "
+        >
+            <section id="contenido" class="contenido">
+                <section class="objeto objeto-a">
+                    <div 
+                        class="character-image" 
+                        style="background-image: url('${imageUrl}');">
+                    </div>
+                    <div class="nombre">
+                            ${name}
+                    </div>
+                    <div class="descripcion">
+                        ${description}
+                    </div>
+                </section>
+                <section class="objeto objeto-b">
+                    <div class="titulo">
+                        Comics
+                    </div>
+                    <div class="informacion">
+                        ${comics || '<li>No hay comics disponibles.</li>'}
+                    </div>
+                    <div class="titulo">
+                        Series
+                    </div>
+                    <div class="informacion">
+                        ${series || '<li>No hay series disponibles.</li>'}
+                    </div>
+                    <div class="titulo">
+                        Stories
+                    </div>
+                    <div class="informacion">
+                        ${stories || '<li>No hay historias disponibles.</li>'}
+                    </div>
+                    <div class="titulo">
+                        Events
+                    </div>
+                    <div class="informacion">
+                        ${events || '<div>No hay eventos disponibles.</div>'}
+                    </div>
+                </section>
+            </section>
         </section>
     `;
 }
-find("spider-man");
-
-/*
-
-<div 
-    class="character-image" 
-    style="
-    background-image: 
-        linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 1) 100%),
-        url('${imageUrl}');");">
-    <div class="nombre">
-        ${name}
-    </div>
-</div>
-
-*/ 
+for (let i = 0; i < 26; i++) {
+    find(String.fromCharCode(97 + i));
+}
