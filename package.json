@@ -1,0 +1,29 @@
+{
+  "name": "parcial",
+  "version": "1.0.0",
+  "description": "Marvel API for chacaracters",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juannnnpablo/Marvel-API.git"
+  },
+  "keywords": [
+    "Marvel",
+    "API",
+    "web",
+    "javascript",
+    "html",
+    "css",
+    "comics",
+    "characters"
+  ],
+  "author": "Juan Pablo Guteirrez Gutierrez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juannnnpablo/Marvel-API/issues"
+  },
+  "homepage": "https://github.com/juannnnpablo/Marvel-API#readme"
+}
