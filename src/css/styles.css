@@ -63,14 +63,14 @@ body {
     padding: 40px;
     min-width: 100vw;
     height: 100vh;
-    gap: 10px;
+    gap: 1rem;
     align-items: center;
     border-radius: 0px;
 }
 
 .item-a {
-    flex-basis: 40%;
-    max-width: 40%;
+    flex-basis: 35%;
+    max-width: 35%;
     height: calc(100vh - 80px);
     display: flex;
     flex-wrap: wrap;
@@ -81,8 +81,8 @@ body {
 }
 
 .character-image {
-    width: 50rem;
-    height: 50rem;
+    width: 20rem;
+    height: 20rem;
     background-repeat: no-repeat;
     background-size: cover;
     box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.5);
@@ -94,7 +94,7 @@ body {
 
 .name {
     background-color: rgba(0, 0, 0, 0);
-    font-size: 3rem;
+    font-size: 1.5rem;
     font-family: "Playwrite BE VLG", cursive;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -109,8 +109,16 @@ body {
 .description {
     background-color: rgba(0, 0, 0, 0);
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 0.8rem;
     color: var(--text-color);
+    max-height: 6rem;
+    overflow-y: scroll;
+}
+
+.description::-webkit-scrollbar {
+    height: 0px;
+    width: 0px;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .item-b {
@@ -125,7 +133,7 @@ body {
 }
 
 .title {
-    font-size: 3rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: var(--text-color);
     background-color: rgba(0, 0, 0, 0);
@@ -139,7 +147,7 @@ body {
 
 .list-item {
     display: flex;
-    height: 4rem;
+    height: 3rem;
     transition: 250ms ease;
     border: 0px var(--border-color) solid;
 }
@@ -148,7 +156,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1rem;
+    font-size: 0.8rem;
     background-color: rgba(0, 0, 0, 0);
     width: 10%;
     height: 100%;
@@ -162,7 +170,7 @@ body {
     width: 90%;
     height: 100%;
     border-radius: 0%;
-    font-size: 1.3rem;
+    font-size: 0.8rem;
 }
 
 .list-item:hover {
@@ -176,7 +184,7 @@ body {
 .date {
     color: var(--text-color-mo);
     font-style: italic;
-    font-size: 1rem;
+    font-size: 0.8rem;
 }
 
 @media (prefers-color-scheme: light) {
@@ -190,13 +198,41 @@ body {
         --shadow-color: rgba(0, 0, 0, 0.2);
         --text-color: #000000; 
         --text-color-mo: rgba(0, 0, 0, 0.8); 
-        --thumb-color: #000000;
+        --thumb-color: rgba(0, 0, 0, 0.5);
     }
     .content {
         background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.5) 50%, rgb(255, 255, 255) 100%);
     }
 }
 
+@media (max-width: 1000px) {
+    body {
+        background-color: var(--background-color-2);
+    }
+
+    .content{
+        width: 50px ;
+        display: flex;
+        flex-direction: row;
+        height: 100vh;
+        padding: 10px;
+        min-width: calc(100vw - 5px);
+        width: calc(100vw - 5px);
+    }
+
+
+    .item-a{
+        min-width: 100%;
+        justify-content: center;
+    }
+
+    .item-b{
+        max-width: 100%;
+        max-height: fit-content;
+    }
+}
+
+/*
 @media (max-width: 2000px) {
     body {
         background-color: var(--background-color-2);
@@ -271,7 +307,8 @@ body {
         width: 80vw;
         height: 80vw;
     }
-}
+} 
+
 
 
 /*

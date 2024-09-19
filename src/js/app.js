@@ -127,4 +127,4 @@ function displayCharacterInfo(character) {
     findCharacter(String.fromCharCode(97 + i));
 }*/
 
-findCharacter("doctor");
+findCharacter("captain")
