@@ -68,6 +68,10 @@ body {
     border-radius: 0px;
 }
 
+.body-container{
+    border-radius: 0px;
+}
+
 .item-a {
     flex-basis: 35%;
     max-width: 35%;
@@ -225,6 +229,10 @@ body {
     .item-a{
         min-width: 100%;
         justify-content: center;
+    }
+
+    .description{
+        max-height: fit-content;
     }
 
     .item-b{
