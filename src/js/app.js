@@ -123,8 +123,6 @@ function displayCharacterInfo(character) {
     `;
 }
 // Fetch characters starting with letters 'a' to 'z'
-/*for (let i = 0; i < 26; i++) {
+for (let i = 0; i < 26; i++) {
     findCharacter(String.fromCharCode(97 + i));
-}*/
-
-findCharacter("captain")
+}
