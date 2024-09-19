@@ -215,7 +215,6 @@ body {
         display: flex;
         flex-direction: row;
         height: 100vh;
-        padding: 10px;
         min-width: calc(100vw - 5px);
         width: calc(100vw - 5px);
     }
