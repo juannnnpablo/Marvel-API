@@ -123,6 +123,7 @@ body {
 
 .item-b {
     display: flex;
+    max-width: calc(65% - 1rem);
     padding: 2rem;
     flex: auto;
     flex-direction: column;
