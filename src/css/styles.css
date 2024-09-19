@@ -226,7 +226,7 @@ body {
     }
 
     .item-b{
-        max-width: 100%;
+        min-width: 100%;
         max-height: fit-content;
     }
 }
